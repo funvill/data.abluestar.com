@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Steven Smethurst">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD22aUA99mlAPbWnQD33rAA/ffuAPrpywD89OYA++nLAPfbqAD55sMA99igAP78+QD67tYA/fnxAP758QD99ukA/PPhAP/+/AD43rEA9tupAPnmxAD32KEA9dWZAP78+gD42KEA9tWZAPjgtAD9+fIA+eC0AP758gD33awA+ejHAProxwD+/v0A+eW/APjitwD++/UA99uqAPrmxQD22KIA/fnzAPngtQD99usA+N2tAP7+/gD78NsA//7+AP779gD9+O4A9tijAPXVmwD44LYA+eC2APfdrgD22qYA+ujJAPnlwQD2154A+OK5APrt1AD++/cA99+xAPrqzAD++O8A99mhAP79+gD33a8A99qnAPbXnwD88N0A99efAP77+AD437IA/fjwAPfUlwD43KoA/v37APrkvQD//fsA/frzAP768wD///4A99qoAPbXoAD11JgA+N+zAPrqzgD33KsA+efGAPjcqwD32aMA9+G2APzv2QD54bYA++zRAP337AD///8A/vz3APjcrAD22aQA99mkAPzy4gD++vUA+eG3APferwD205QA+N6vAPz05QD99OUA+/HdAPbYnwD+/PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYGBgYGBgYDAfSBxeZmBgYGBgIWBgLk1qaD0jWwM+YGBgQWtgUWdiNBtgYGBgbVhgYEJgYEUlWGBMHWBgYGALUB0SYGBVEmBgYChVTGBgYGAiSGBOASoENgA4DlIvYGBgXVlgQWNhZGQBASYUE2BgYDpEYBE1XBUVJydXT2RlYGBlAiBgCWxEU1NTK2BjM2BgYDIyBklMQwICORBgYzFgYGA/GRlWLGAtNzxfLgJSYGBgYA9UVBYeGmgIFzsyVmBgYGBgYAxARksNYGAKGUdgYGBgYGBgYGBgYGApSgVgYGBgYGBgYGBgYBsYaQdgYGBgYGBgYGBvIFpuIiRgYGBgYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    <title>2015 Personal dashboard</title>
+
+
+	<!-- Latest Bootstrap -->
+	<link rel="stylesheet" href="3rdparty/bootstrap.min.css">
+	<link rel="stylesheet" href="3rdparty/bootstrap-theme.min.css">
+	<script src="3rdparty/jquery-2.1.4.min.js"></script>
+	<script src="3rdparty/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- D3 -->
+    <script type="text/javascript" src="3rdparty/d3.min.js" charset="utf-8"></script>
+
+    <!-- NVD3 -->
+    <link rel="stylesheet" href="3rdparty/nv.d3.min.css">
+    <script type="text/javascript" src="3rdparty/nv.d3.min.js" charset="utf-8"></script>
+
+
+  </head>
+  <body>    
+      <div class="container">
+        <div class="navbar navbar-default" role="navigation">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">2015</a></li>
+            <li><a href="../2014/">2014</a></li>
+          </ul>
+        </div>
+      </div>
+    
+
+    <div class="container">
+
+<div class="chart-title">2015 in Review</div>
+<div id = "all" class='chart'>
+  <svg></svg>
+</div>
+
+		<style>
+			.chart {
+			  width: 100%;
+			  height: 600px;
+			  margin: 50px auto 0;
+			}
+		</style>
+
+		<script type="text/javascript">
+			var parseDate = d3.time.format("%Y-%m-%d").parse;
+	    	var csvPath = "data/all.csv" ; 
+
+			var customTimeFormat = d3.time.format.multi([
+	            ["%b %-d", function(d) { return d.getDate() != 1; }], // not the first of the month
+	            ["%b %-d", function(d) { return d.getMonth(); }], // not Jan 1st
+	            ["%Y", function() { return true; }]
+			]);
+
+			function LoadData(path, callback) {				
+				console.log("LoadData");
+				d3.csv(csvPath, function(error, data){
+					//get each key of the data that is not date
+					//these will be our key in the key/value pair
+					//the values x and y will be month and the value
+					var dataToPlot = Object.keys(data[0]).filter(function(k){return k !="date"})
+						.map(function(k){
+							return { "key":k,"values":data.map(function(d) {
+							return {
+								//let's make this a real date
+								"x":parseDate(d.date),
+								"y":+d[k]
+								}
+							})}
+					});					
+					dataToPlot.forEach( function( series) {
+						series.disabled = true ; 
+					});
+					dataToPlot[0].disabled = false ; 
+					callback(dataToPlot);
+				});
+			}
+
+			function RenderCharts( database ) {
+				console.log("RenderCharts");
+
+				EnableDatabaseSeries( database, ['bchydro_netConsumption'] ) ; 
+				DisplayChart( database, '#all' ); 
+			}
+
+			function EnableDatabaseSeries( database, displaySeriesNames ) {
+				// Find the series that we are looking for and remove all the other ones. 
+				database.forEach( function( series) {
+					// console.log( "series:" + series.key );
+					var found = false ;
+					displaySeriesNames.some( function( search ) {
+						// console.log( "  search:" + search );
+						if( search.localeCompare(series.key) == 0) {
+							// console.log( "    found" );
+							found = true ; 
+							return true;
+						}
+						return false;
+					});
+
+					if( !found ) {
+						// console.log( "  removing series:"+ series.key );
+						series.disabled = true ; 
+					} else {
+						// console.log( "  adding series:"+ series.key );
+						series.disabled = false ; 
+					}
+				});
+			}
+
+			function DisplayChart( database, elementName ) 
+			{			
+				nv.addGraph(function() {
+			        var chart = nv.models.lineWithFocusChart()
+			        // var chart = nv.models.lineChart()
+				    chart.options({
+				      noData: "Not enough data to graph",
+				      transitionDuration: 500,
+				      showLegend: true,
+				      showXAxis: true,
+				      showYAxis: true,
+				      rightAlignYAxis: false,
+				    })
+				    .useInteractiveGuideline(true) // check out the css that turns the guideline into this nice thing
+				    .interpolate("basis")  // http://www.d3noob.org/2013/01/smoothing-out-lines-in-d3js.html
+            		;
+			    
+			        chart.xAxis
+			        	.showMaxMin(false)
+			        	
+			        	.tickFormat(function (d) { return customTimeFormat(new Date(d)); })
+			            // .tickFormat(function(d) { return d3.time.format('%d-%b')(new Date(d)) })
+			            .ticks(12)
+			            ;
+			      	chart.x2Axis
+			      		.showMaxMin(false)			        	
+			        	.tickFormat(function (d) { return customTimeFormat(new Date(d)); })
+			            .ticks(12)
+			            ;
+			        chart.y2Axis
+			        	.ticks(0)
+			        	.showMaxMin(false);
+			    
+			        chart.yAxis
+			            .tickFormat(d3.format(',f'));
+			    
+			        d3.select( elementName + ' svg')
+			            .datum(database)
+			            .call(chart);
+			    
+			        nv.utils.windowResize(chart.update);
+			    
+			        return chart;
+			    });
+			}
+
+
+			LoadData( csvPath, RenderCharts ) ;
+
+
+
+			/*
+
+
+			d3.csv(csvPath, function(error, data){
+				//get each key of the data that is not date
+				//these will be our key in the key/value pair
+				//the values x and y will be month and the value
+				var dataToPlot = Object.keys(data[0]).filter(function(k){return k !="date"})
+					.map(function(k){
+						return { "key":k,"values":data.map(function(d) {
+						return {
+							//let's make this a real date
+							"x":parseDate(d.date),
+							"y":+d[k]
+							}
+						})}
+				});
+				
+				dataToPlot.forEach( function( series) {
+					series.disabled = true ; 
+				});
+				dataToPlot[0].disabled = false ; 
+				// console.log(dataToPlot);
+		
+				nv.addGraph(function() {
+			        var chart = nv.models.lineWithFocusChart()
+			        // var chart = nv.models.lineChart()
+				    chart.options({
+				      noData: "Not enough data to graph",
+				      transitionDuration: 500,
+				      showLegend: true,
+				      showXAxis: true,
+				      showYAxis: true,
+				      rightAlignYAxis: false,
+				    })
+				    .useInteractiveGuideline(true) // check out the css that turns the guideline into this nice thing
+				    .interpolate("basis")  // http://www.d3noob.org/2013/01/smoothing-out-lines-in-d3js.html
+            		;
+			    
+			        chart.xAxis
+			        	.showMaxMin(false)
+			        	
+			        	.tickFormat(function (d) { return customTimeFormat(new Date(d)); })
+			            // .tickFormat(function(d) { return d3.time.format('%d-%b')(new Date(d)) })
+			            .ticks(12)
+			            ;
+			      	chart.x2Axis
+			      		.showMaxMin(false)			        	
+			        	.tickFormat(function (d) { return customTimeFormat(new Date(d)); })
+			            .ticks(12)
+			            ;
+			        chart.y2Axis
+			        	.ticks(0)
+			        	.showMaxMin(false);
+			    
+			        chart.yAxis
+			            .tickFormat(d3.format(',f'));
+			    
+			        d3.select('#chart1 svg')
+			            .datum(dataToPlot)
+			            .call(chart);
+			    
+			        nv.utils.windowResize(chart.update);
+			    
+			        return chart;
+			    });
+			 });
+			*/
+		</script>
+    </div>
+  </body>
+</html>

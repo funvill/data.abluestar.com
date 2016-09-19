@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Steven Smethurst">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD22aUA99mlAPbWnQD33rAA/ffuAPrpywD89OYA++nLAPfbqAD55sMA99igAP78+QD67tYA/fnxAP758QD99ukA/PPhAP/+/AD43rEA9tupAPnmxAD32KEA9dWZAP78+gD42KEA9tWZAPjgtAD9+fIA+eC0AP758gD33awA+ejHAProxwD+/v0A+eW/APjitwD++/UA99uqAPrmxQD22KIA/fnzAPngtQD99usA+N2tAP7+/gD78NsA//7+AP779gD9+O4A9tijAPXVmwD44LYA+eC2APfdrgD22qYA+ujJAPnlwQD2154A+OK5APrt1AD++/cA99+xAPrqzAD++O8A99mhAP79+gD33a8A99qnAPbXnwD88N0A99efAP77+AD437IA/fjwAPfUlwD43KoA/v37APrkvQD//fsA/frzAP768wD///4A99qoAPbXoAD11JgA+N+zAPrqzgD33KsA+efGAPjcqwD32aMA9+G2APzv2QD54bYA++zRAP337AD///8A/vz3APjcrAD22aQA99mkAPzy4gD++vUA+eG3APferwD205QA+N6vAPz05QD99OUA+/HdAPbYnwD+/PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYGBgYGBgYDAfSBxeZmBgYGBgIWBgLk1qaD0jWwM+YGBgQWtgUWdiNBtgYGBgbVhgYEJgYEUlWGBMHWBgYGALUB0SYGBVEmBgYChVTGBgYGAiSGBOASoENgA4DlIvYGBgXVlgQWNhZGQBASYUE2BgYDpEYBE1XBUVJydXT2RlYGBlAiBgCWxEU1NTK2BjM2BgYDIyBklMQwICORBgYzFgYGA/GRlWLGAtNzxfLgJSYGBgYA9UVBYeGmgIFzsyVmBgYGBgYAxARksNYGAKGUdgYGBgYGBgYGBgYGApSgVgYGBgYGBgYGBgYBsYaQdgYGBgYGBgYGBvIFpuIiRgYGBgYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    <title>2015 Personal dashboard</title>
+
+
+	<!-- Latest Bootstrap -->
+	<link rel="stylesheet" href="3rdparty/bootstrap.min.css">
+	<link rel="stylesheet" href="3rdparty/bootstrap-theme.min.css">
+	<script src="3rdparty/jquery-2.1.4.min.js"></script>
+	<script src="3rdparty/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- D3 -->
+    <script type="text/javascript" src="3rdparty/d3.min.js" charset="utf-8"></script>
+
+    <!-- NVD3 -->
+    <link rel="stylesheet" href="3rdparty/nv.d3.min.css">
+    <script type="text/javascript" src="3rdparty/nv.d3.min.js" charset="utf-8"></script>
+
+
+  </head>
+  <body>    
+      <div class="container">
+        <div class="navbar navbar-default" role="navigation">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">2015</a></li>
+            <li><a href="../2014/">2014</a></li>
+          </ul>
+        </div>
+      </div>
+    
+
+    <div class="container">
+
+        <h2 id='about'>About</h2>
+        <p>Step count, Data from receue time, banking, hydro, bills. Previouse year <a href='http://data.abluestar.com/2015/'>2014</a></p>
+        <p>Inspired by <a href='http://blog.stephenwolfram.com/2012/03/the-personal-analytics-of-my-life/'>The Personal Analytics of My Life by Stephen Wolfram</a></p>
+
+        <h3>Tools used:</h3>
+        <ul>
+        	<li><h4>Data Tracking</h4>
+        		<ul>
+        			<li><a href='https://dev.twitter.com/docs/api/1.1'>Twitter API</a> - Social site. </li>
+		            <li><a href='https://analytics.twitter.com/user/funvill/tweets'>Twitter Analytics</a> - Stats about my tweets</li>                
+		            <li><a href='https://developer.foursquare.com/'>Foursquare API</a> - Tracks the places I check into </li>
+		            <li><a href='https://foursquare.com/infographics/4sqday'>Foursquare Year in review</a> - Info graphics about your foursquare data. </li>
+		            <li><a href='http://www.last.fm/api'>LastFM API</a> - Tracks the songs that are played from my variouse devices and apps.</li>
+		            <li><a href='http://developer.github.com/'>Github API</a> - Storage for the source code. Tracking commits</li>
+		            <li><a href='https://moves-app.com/'>Moves-App</a> - An Android and ISO app that tracks your movements and steps.</li>
+		            <li><a href='https://move-o-scope.halftone.co'>Move-o-scope</a> - Maping for Moves-App</li>
+		            <li><a href='https://history.google.com/history/'>Google search history</a> - A list of all the searches I have made this year</li>
+		            <li><a href='https://www.rescuetime.com/ref/533973'>RescueTime</a> - Windows apps tracker.</li>
+		             . 
+        		</ul>
+        	</li>
+            <li><h4>Webpage and visualization</h4>
+            	<ul>
+            		<li><a href='http://getbootstrap.com/'>Bootstrap</a> - A frontend framework for making websites fast.</li>
+                <li><a href='https://jquery.com/'>jQuery</a> - Required by bootstrap.  
+            		<li><a href='http://d3js.org/'>D3</a> - Data-Driven Documents (D3) is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS.</li>
+            		<li><a href='http://nvd3.org/'>NVD3</a> - Re-usable charts for d3.js 
+
+            	</ul>
+            </li>
+        </ul>
+
+        <h3 id='Totals'>Totals</h3>
+        <p>Totals from stats</p>
+        <table>
+            <tr><th>Tweets</th><td>735</td></tr>
+            <tr><th>twitter_impressions</th><td>103,088</td></tr>
+            <tr><th>twitter_engagements</th><td>2,138</td></tr>
+            <tr><th>twitter_retweets</th><td>115</td></tr>
+            <tr><th>twitter_replies</th><td>115</td></tr>
+            <tr><th>twitter_likes</th><td>331</td></tr>
+            <tr><th>twitter_userProfileClicks</th><td>135</td></tr>
+            <tr><th>twitter_UrlClicks</th><td>423</td></tr>
+            <tr><th>lastfm_songsPlayed</th><td>7507</td></tr>
+            <tr><th>github_checkins</th><td>361</td></tr>
+            <tr><th>foursquare_checkins</th><td>764</td></tr>
+            <tr><th>bchydro_netConsumption</th><td>2,757.45 kWh</td></tr>
+            <tr><th>Visa</th><td>{redacted}</td></tr>
+            <tr><th>Google Searches</th><td>10,236</td></tr>
+            <tr><th>Steps</th><td>2,156,128</td></tr>
+        </table>
+        <!--  --> 
+
+
+        <div id = "all" class='chart'>
+          <svg></svg>
+        </div>
+        <style>
+          .chart {
+            width: 100%;
+            height: 600px;
+            margin: 50px auto 0;
+          }
+        </style>
+
+    <script type="text/javascript">
+      var parseDate = d3.time.format("%Y-%m-%d").parse;
+        var csvPath = "data/all.csv" ; 
+
+      var customTimeFormat = d3.time.format.multi([
+              ["%b %-d", function(d) { return d.getDate() != 1; }], // not the first of the month
+              ["%b %-d", function(d) { return d.getMonth(); }], // not Jan 1st
+              ["%Y", function() { return true; }]
+      ]);
+
+      function LoadData(path, callback) {       
+        console.log("LoadData");
+        d3.csv(csvPath, function(error, data){
+          //get each key of the data that is not date
+          //these will be our key in the key/value pair
+          //the values x and y will be month and the value
+          var dataToPlot = Object.keys(data[0]).filter(function(k){return k !="date"})
+            .map(function(k){
+              return { "key":k,"values":data.map(function(d) {
+              return {
+                //let's make this a real date
+                "x":parseDate(d.date),
+                "y":+d[k]
+                }
+              })}
+          });         
+          dataToPlot.forEach( function( series) {
+            series.disabled = true ; 
+          });
+          dataToPlot[0].disabled = false ; 
+          callback(dataToPlot);
+        });
+      }
+
+      function RenderCharts( database ) {
+        console.log("RenderCharts");
+
+        EnableDatabaseSeries( database, ['github_checkins', 'foursquare_checkins', 'bchydro_netConsumption', 'outside_meanTemp'] ) ; 
+        DisplayChart( database, '#all' ); 
+      }
+
+      function EnableDatabaseSeries( database, displaySeriesNames ) {
+        // Find the series that we are looking for and remove all the other ones. 
+        database.forEach( function( series) {
+          // console.log( "series:" + series.key );
+          var found = false ;
+          displaySeriesNames.some( function( search ) {
+            // console.log( "  search:" + search );
+            if( search.localeCompare(series.key) == 0) {
+              // console.log( "    found" );
+              found = true ; 
+              return true;
+            }
+            return false;
+          });
+
+          if( !found ) {
+            // console.log( "  removing series:"+ series.key );
+            series.disabled = true ; 
+          } else {
+            // console.log( "  adding series:"+ series.key );
+            series.disabled = false ; 
+          }
+        });
+      }
+
+      function DisplayChart( database, elementName ) 
+      {     
+        nv.addGraph(function() {
+              var chart = nv.models.lineWithFocusChart()
+              // var chart = nv.models.lineChart()
+            chart.options({
+              noData: "Not enough data to graph",
+              transitionDuration: 500,
+              showLegend: true,
+              showXAxis: true,
+              showYAxis: true,
+              rightAlignYAxis: false,
+            })
+            .useInteractiveGuideline(true) // check out the css that turns the guideline into this nice thing
+            // .interpolate("basis")  // http://www.d3noob.org/2013/01/smoothing-out-lines-in-d3js.html
+                ;
+          
+              chart.xAxis
+                .showMaxMin(false)
+                
+                .tickFormat(function (d) { return customTimeFormat(new Date(d)); })
+                  // .tickFormat(function(d) { return d3.time.format('%d-%b')(new Date(d)) })
+                  .ticks(12)
+                  ;
+              chart.x2Axis
+                .showMaxMin(false)                
+                .tickFormat(function (d) { return customTimeFormat(new Date(d)); })
+                  .ticks(12)
+                  ;
+              chart.y2Axis
+                .ticks(0)
+                .showMaxMin(false);
+          
+              chart.yAxis
+                  .tickFormat(d3.format(',f'));
+          
+              d3.select( elementName + ' svg')
+                  .datum(database)
+                  .call(chart);
+          
+              nv.utils.windowResize(chart.update);
+          
+              return chart;
+          });
+      }
+
+
+      LoadData( csvPath, RenderCharts ) ;
+
+
+
+      /*
+
+
+      d3.csv(csvPath, function(error, data){
+        //get each key of the data that is not date
+        //these will be our key in the key/value pair
+        //the values x and y will be month and the value
+        var dataToPlot = Object.keys(data[0]).filter(function(k){return k !="date"})
+          .map(function(k){
+            return { "key":k,"values":data.map(function(d) {
+            return {
+              //let's make this a real date
+              "x":parseDate(d.date),
+              "y":+d[k]
+              }
+            })}
+        });
+        
+        dataToPlot.forEach( function( series) {
+          series.disabled = true ; 
+        });
+        dataToPlot[0].disabled = false ; 
+        // console.log(dataToPlot);
+    
+        nv.addGraph(function() {
+              var chart = nv.models.lineWithFocusChart()
+              // var chart = nv.models.lineChart()
+            chart.options({
+              noData: "Not enough data to graph",
+              transitionDuration: 500,
+              showLegend: true,
+              showXAxis: true,
+              showYAxis: true,
+              rightAlignYAxis: false,
+            })
+            .useInteractiveGuideline(true) // check out the css that turns the guideline into this nice thing
+            .interpolate("basis")  // http://www.d3noob.org/2013/01/smoothing-out-lines-in-d3js.html
+                ;
+          
+              chart.xAxis
+                .showMaxMin(false)
+                
+                .tickFormat(function (d) { return customTimeFormat(new Date(d)); })
+                  // .tickFormat(function(d) { return d3.time.format('%d-%b')(new Date(d)) })
+                  .ticks(12)
+                  ;
+              chart.x2Axis
+                .showMaxMin(false)                
+                .tickFormat(function (d) { return customTimeFormat(new Date(d)); })
+                  .ticks(12)
+                  ;
+              chart.y2Axis
+                .ticks(0)
+                .showMaxMin(false);
+          
+              chart.yAxis
+                  .tickFormat(d3.format(',f'));
+          
+              d3.select('#chart1 svg')
+                  .datum(dataToPlot)
+                  .call(chart);
+          
+              nv.utils.windowResize(chart.update);
+          
+              return chart;
+          });
+       });
+      */
+    </script>
+
+
+
+
+
+
+
+
+
+    
+
+        <!-- Maps --> 
+        <h3 id='maps'>Maps</h3>
+        <p>This map is generated with the data recored from <a href='https://moves-app.com/'>Moves-App</a> and mapped with <a href='https://move-o-scope.halftone.co'>Move-o-scope</a>. <a href='https://app.moveoscope.com/vis/user/795acfdbaafef581c28bd81e3126d29e'>Interactive map</a></p>
+        <!--  --> 
+
+        <ul class="nav nav-pills">
+          <li role="presentation"><a class="mapAll"   href="#maps">All</a></li>
+          <li role="presentation"><a class="mapWalk"  href="#maps">Walk</a></li>
+          <li role="presentation"><a class="mapRun"   href="#maps">Run</a></li>
+          <li role="presentation"><a class="mapCycle" href="#maps">Cycle</a></li>
+          <li role="presentation"><a class="mapTrans" href="#maps">Trans</a></li>
+        </ul>
+        <img id='mapImage' src='moves_all.PNG' style="width: 100%;" />
+
+        <script type="text/javascript" >
+            $(function() {
+             $('.mapAll').click(function() { 
+               $("#mapImage").attr('src',"moves_all.PNG");   $("#mapImage").fadeIn(); return false;
+             });
+             $('.mapWalk').click(function(){
+               $("#mapImage").attr('src',"moves_walk.PNG");  $("#mapImage").fadeIn(); return false;
+             });
+             $('.mapRun').click(function(){
+               $("#mapImage").attr('src',"moves_run.PNG");   $("#mapImage").fadeIn(); return false;
+             });
+             $('.mapCycle').click(function(){
+               $("#mapImage").attr('src',"moves_cycle.PNG"); $("#mapImage").fadeIn(); return false;
+             });
+             $('.mapTrans').click(function(){
+               $("#mapImage").attr('src',"moves_trans.PNG"); $("#mapImage").fadeIn(); return false;
+             });
+            });
+        </script>
+        <!-- / #Maps -->  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <h3 id='foursquare'>Four Square</h3>
+        <p>https://foursquare.com/infographics/4sqday</p>
+        <img src='foursquare.PNG' style="width: 100%;" />
+        <br />
+
+        <h3 id='github'>Github</h3>
+        <p>The github checkin values where found here <a href='https://github.com/users/funvill/contributions'>contributions</a> I used macros to extract the data from the SVG image</p>
+        
+        <h3>Time spent</h3>
+        <p>These reports are created with <a href='https://www.rescuetime.com/ref/533973'>RescueTime</a>. The data comes from an app that is installed on my work and home PCs as well as my primary cell phone. The app only recoreds when the mouse and keyboard are active while using this app. This can distort the reportins for certain apps. </p>
+        <p>For example: <br />In Visual Studio I spent most of my time typing and that time gets reported correctly. While watching a movie in Netflix, I don't move my mouse or type on my keyboard and their app dones not correctly report the time spent in these apps.</p>
+        <img src='rescuetime2015.png' style="width: 100%;" />
+        <br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">                    
+                    <table style='width: 100%'>
+
+                        <tr><th>Rank</th><th>Activity</th><th>Overview</th></tr>
+                        <tr><td>1</td><td>Gmail</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>2</td><td>Visual Studio</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>3</td><td>{redacted}</td><td>{redacted}</td></tr>
+                        <tr><td>4</td><td>talk.hackspace.ca</td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>5</td><td>vanhack.slack.com</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>6</td><td>Skype</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>7</td><td>Windows Explorer</td><td><div class='utilities'>Utilities</div></td></tr>
+                        <tr><td>8</td><td>sublime_text</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>9</td><td>Google Documents</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>10</td><td>{redacted}</td><td>{redacted}</td></tr>
+                        <tr><td>11</td><td>Trillian IM</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>12</td><td>teamviewer</td><td><div class='utilities'>Utilities</div></td></tr>
+                        <tr><td>13</td><td>google.ca</td><td><div class='reference'>Reference & Learning</div></td></tr>
+                        <tr><td>14</td><td>reddit.com</td><td><div class='news'>News & Opinion</div></td></tr>
+                        <tr><td>15</td><td>Google Documents - Google Apps</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>16</td><td>TweetDeck</td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>17</td><td>{redacted}</td><td>{redacted}</td></tr>
+                        <tr><td>18</td><td>youtube.com</td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>19</td><td>tweetdeck.twitter.com</td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>20</td><td>bcompare</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>21</td><td>github.com</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>22</td><td>wireshark</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>23</td><td>{redacted}</td><td>{redacted}</td></tr>
+                        <tr><td>24</td><td>netflix.com</td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>25</td><td>prison architect</td><td><div class='entertainment'>Entertainment</div></td></tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table style='width: 100%'>
+                        <tr><th>Rank</th><th>Activity</th><th>Overview</th></tr>
+                        <tr><td>26</td><td>Google Chrome</td><td><div class='utilities'>Utilities</div></td></tr>
+                        <tr><td>27</td><td>filezilla</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>28</td><td>google.com/calendar</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>29</td><td>putty</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>30</td><td>inkscape</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>31</td><td>cas bacnet explorer</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>32</td><td>Hosted Google Docs</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>33</td><td>kickstarter.com</td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>34</td><td>rdio.com</td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>35</td><td>javaw</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>36</td><td>{redacted}</td><td>{redacted}</td></tr>
+                        <tr><td>37</td><td>news.ycombinator.com</td><td><div class='news'>News & Opinion</div></td></tr>
+                        <tr><td>38</td><td>en.wikipedia.org</td><td><div class='reference'>Reference & Learning</div></td></tr>
+                        <tr><td>39</td><td>nbeclipse</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>40</td><td>{redacted}</td><td>{redacted}</td></tr>
+                        <tr><td>41</td><td>instructables.com</td><td><div class='reference'>Reference & Learning</div></td></tr>
+                        <tr><td>42</td><td>app.chipkin.com</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>43</td><td>Command Prompt</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>44</td><td>Google Spreadsheets</td><td>Business</td></tr>
+                        <tr><td>45</td><td>MS Excel</td><td>Business</td></tr>
+                        <tr><td>46</td><td>NotePad++</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>47</td><td>Google+</td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>48</td><td>realterm</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>49</td><td>TortoiseProc</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>50</td><td>aliexpress.com</td><td>Shopping</td></tr>
+                    </table>                    
+                </div>
+            </div>
+        </div>
+        <style>
+            .entertainment, .news, .social {
+                color: red ;
+            }
+            .devlopment, .design, .utilities, .comunication {
+                color: blue ;
+            }
+            .reference {
+                color: green ;
+            }
+
+        </style>
+
+        <!-- 
+        <h3>Google Search history</h3>
+        <p>This data comes from <a href='https://history.google.com/history/'>Google search history</a><p>
+        <img src='search.png' style="width: 100%;" />
+        -->
+
+
+        <!-- 
+        <h3>BC Hydro consumption</h3>
+        <p>This data comes from BC Hydro directly. Messured daily in Kwh<p>
+        <div id="BCHydroChart" class="BCHydroContainers" style="width: 100%;"></div>
+        <script>
+
+            var BCHydroChartSource = [
+                {time: new Date(2015,01,01),kwh: 17.65},
+                {time: new Date(2015,01,02),kwh: 16.41},
+                {time: new Date(2015,01,03),kwh: 37.31},
+                {time: new Date(2015,01,04),kwh: 24.81},
+                {time: new Date(2015,01,05),kwh: 20.64},
+                {time: new Date(2015,01,06),kwh: 14.56},
+                {time: new Date(2015,01,07),kwh: 15.93},
+                {time: new Date(2015,01,08),kwh: 19.13},
+                {time: new Date(2015,01,09),kwh: 18.86},
+                {time: new Date(2015,01,10),kwh: 17.67},
+                {time: new Date(2015,01,11),kwh: 15.64},
+                {time: new Date(2015,01,12),kwh: 16.28},
+                {time: new Date(2015,01,13),kwh: 18.51},
+                {time: new Date(2015,01,14),kwh: 23.73},
+                {time: new Date(2015,01,15),kwh: 21.46},
+                {time: new Date(2015,01,16),kwh: 15.44},
+                {time: new Date(2015,01,17),kwh: 29.33},
+                {time: new Date(2015,01,18),kwh: 30.17},
+                {time: new Date(2015,01,19),kwh: 5.82},
+                {time: new Date(2015,01,20),kwh: 10.91},
+                {time: new Date(2015,01,21),kwh: 23.82},
+                {time: new Date(2015,01,22),kwh: 19.83},
+                {time: new Date(2015,01,23),kwh: 13.83},
+                {time: new Date(2015,01,24),kwh: 12.91},
+                {time: new Date(2015,01,25),kwh: 10.15},
+                {time: new Date(2015,01,26),kwh: 6.12},
+                {time: new Date(2015,01,27),kwh: 5.61},
+                {time: new Date(2015,01,28),kwh: 9.73},
+                {time: new Date(2015,01,29),kwh: 11.92},
+                {time: new Date(2015,01,30),kwh: 12.33},
+                {time: new Date(2015,01,31),kwh: 13.56},
+                {time: new Date(2015,02,01),kwh: 12.59},
+                {time: new Date(2015,02,02),kwh: 12.24},
+                {time: new Date(2015,02,03),kwh: 8.53},
+                {time: new Date(2015,02,04),kwh: 11.51},
+                {time: new Date(2015,02,05),kwh: 2.15},
+                {time: new Date(2015,02,06),kwh: 0.62},
+                {time: new Date(2015,02,07),kwh: 0.47},
+                {time: new Date(2015,02,08),kwh: 0.48},
+                {time: new Date(2015,02,09),kwh: 0.42},
+                {time: new Date(2015,02,10),kwh: 0.50},
+                {time: new Date(2015,02,11),kwh: 0.45},
+                {time: new Date(2015,02,12),kwh: 0.46},
+                {time: new Date(2015,02,13),kwh: 0.46},
+                {time: new Date(2015,02,14),kwh: 0.46},
+                {time: new Date(2015,02,15),kwh: 0.46},
+                {time: new Date(2015,02,16),kwh: 19.18},
+                {time: new Date(2015,02,17),kwh: 8.62},
+                {time: new Date(2015,02,18),kwh: 4.92},
+                {time: new Date(2015,02,19),kwh: 5.23},
+                {time: new Date(2015,02,20),kwh: 3.15},
+                {time: new Date(2015,02,21),kwh: 2.43},
+                {time: new Date(2015,02,22),kwh: 1.82},
+                {time: new Date(2015,02,23),kwh: 14.20},
+                {time: new Date(2015,02,24),kwh: 19.93},
+                {time: new Date(2015,02,25),kwh: 14.60},
+                {time: new Date(2015,02,26),kwh: 14.60},
+                {time: new Date(2015,02,27),kwh: 14.79},
+                {time: new Date(2015,02,28),kwh: 20.27},
+                {time: new Date(2015,03,01),kwh: 24.29},
+                {time: new Date(2015,03,02),kwh: 2.97},
+                {time: new Date(2015,03,03),kwh: 3.09},
+                {time: new Date(2015,03,04),kwh: 16.67},
+                {time: new Date(2015,03,05),kwh: 19.34},
+                {time: new Date(2015,03,06),kwh: 3.02},
+                {time: new Date(2015,03,07),kwh: 34.32},
+                {time: new Date(2015,03,08),kwh: 24.07},
+                {time: new Date(2015,03,09),kwh: 17.85},
+                {time: new Date(2015,03,10),kwh: 19.71},
+                {time: new Date(2015,03,11),kwh: 13.65},
+                {time: new Date(2015,03,12),kwh: 2.99},
+                {time: new Date(2015,03,13),kwh: 3.24},
+                {time: new Date(2015,03,14),kwh: 4.19},
+                {time: new Date(2015,03,15),kwh: 4.26},
+                {time: new Date(2015,03,16),kwh: 4.50},
+                {time: new Date(2015,03,17),kwh: 4.24},
+                {time: new Date(2015,03,18),kwh: 3.37},
+                {time: new Date(2015,03,19),kwh: 4.78},
+                {time: new Date(2015,03,20),kwh: 6.99},
+                {time: new Date(2015,03,21),kwh: 3.26},
+                {time: new Date(2015,03,22),kwh: 4.12},
+                {time: new Date(2015,03,23),kwh: 15.76},
+                {time: new Date(2015,03,24),kwh: 11.26},
+                {time: new Date(2015,03,25),kwh: 3.34},
+                {time: new Date(2015,03,26),kwh: 4.13},
+                {time: new Date(2015,03,27),kwh: 3.09},
+                {time: new Date(2015,03,28),kwh: 4.85},
+                {time: new Date(2015,03,29),kwh: 4.05},
+                {time: new Date(2015,03,30),kwh: 4.88},
+                {time: new Date(2015,03,31),kwh: 3.41},
+                {time: new Date(2015,04,01),kwh: 3.08},
+                {time: new Date(2015,04,02),kwh: 2.78},
+                {time: new Date(2015,04,03),kwh: 19.11},
+                {time: new Date(2015,04,04),kwh: 3.90},
+                {time: new Date(2015,04,05),kwh: 8.18},
+                {time: new Date(2015,04,06),kwh: 5.47},
+                {time: new Date(2015,04,07),kwh: 5.90},
+                {time: new Date(2015,04,08),kwh: 3.66},
+                {time: new Date(2015,04,09),kwh: 1.26},
+                {time: new Date(2015,04,10),kwh: 2.97},
+                {time: new Date(2015,04,11),kwh: 10.04},
+                {time: new Date(2015,04,12),kwh: 6.95},
+                {time: new Date(2015,04,13),kwh: 3.61},
+                {time: new Date(2015,04,14),kwh: 0.85},
+                {time: new Date(2015,04,15),kwh: 0.90},
+                {time: new Date(2015,04,16),kwh: 0.93},
+                {time: new Date(2015,04,17),kwh: 1.00},
+                {time: new Date(2015,04,18),kwh: 0.91},
+                {time: new Date(2015,04,19),kwh: 0.91},
+                {time: new Date(2015,04,20),kwh: 0.94},
+                {time: new Date(2015,04,21),kwh: 0.96},
+                {time: new Date(2015,04,22),kwh: 0.91},
+                {time: new Date(2015,04,23),kwh: 0.90},
+                {time: new Date(2015,04,24),kwh: 0.60},
+                {time: new Date(2015,04,25),kwh: 0.29},
+                {time: new Date(2015,04,26),kwh: 13.18},
+                {time: new Date(2015,04,27),kwh: 10.27},
+                {time: new Date(2015,04,28),kwh: 7.40},
+                {time: new Date(2015,04,29),kwh: 8.57},
+                {time: new Date(2015,04,30),kwh: 4.49},
+                {time: new Date(2015,05,01),kwh: 3.26},
+                {time: new Date(2015,05,02),kwh: 3.79},
+                {time: new Date(2015,05,03),kwh: 7.52},
+                {time: new Date(2015,05,04),kwh: 3.48},
+                {time: new Date(2015,05,05),kwh: 1.66},
+                {time: new Date(2015,05,06),kwh: 3.49},
+                {time: new Date(2015,05,07),kwh: 1.62},
+                {time: new Date(2015,05,08),kwh: 1.62},
+                {time: new Date(2015,05,09),kwh: 5.54},
+                {time: new Date(2015,05,10),kwh: 3.41},
+                {time: new Date(2015,05,11),kwh: 7.40},
+                {time: new Date(2015,05,12),kwh: 1.98},
+                {time: new Date(2015,05,13),kwh: 1.73},
+                {time: new Date(2015,05,14),kwh: 2.01},
+                {time: new Date(2015,05,15),kwh: 4.08},
+                {time: new Date(2015,05,16),kwh: 2.96},
+                {time: new Date(2015,05,17),kwh: 1.01},
+                {time: new Date(2015,05,18),kwh: 4.32},
+                {time: new Date(2015,05,19),kwh: 4.17},
+                {time: new Date(2015,05,20),kwh: 2.97},
+                {time: new Date(2015,05,21),kwh: 2.86},
+                {time: new Date(2015,05,22),kwh: 2.29},
+                {time: new Date(2015,05,23),kwh: 1.62},
+                {time: new Date(2015,05,24),kwh: 3.65},
+                {time: new Date(2015,05,25),kwh: 1.75},
+                {time: new Date(2015,05,26),kwh: 2.76},
+                {time: new Date(2015,05,27),kwh: 3.45},
+                {time: new Date(2015,05,28),kwh: 3.17},
+                {time: new Date(2015,05,29),kwh: 3.78},
+                {time: new Date(2015,05,30),kwh: 5.26},
+                {time: new Date(2015,05,31),kwh: 5.34},
+                {time: new Date(2015,06,01),kwh: 3.33},
+                {time: new Date(2015,06,02),kwh: 4.46},
+                {time: new Date(2015,06,03),kwh: 5.06},
+                {time: new Date(2015,06,04),kwh: 8.44},
+                {time: new Date(2015,06,05),kwh: 5.03},
+                {time: new Date(2015,06,06),kwh: 2.34},
+                {time: new Date(2015,06,07),kwh: 1.76},
+                {time: new Date(2015,06,08),kwh: 4.40},
+                {time: new Date(2015,06,09),kwh: 1.89},
+                {time: new Date(2015,06,10),kwh: 2.61},
+                {time: new Date(2015,06,11),kwh: 3.27},
+                {time: new Date(2015,06,12),kwh: 1.29},
+                {time: new Date(2015,06,13),kwh: 3.17},
+                {time: new Date(2015,06,14),kwh: 2.17},
+                {time: new Date(2015,06,15),kwh: 4.13},
+                {time: new Date(2015,06,16),kwh: 0.99},
+                {time: new Date(2015,06,17),kwh: 0.60},
+                {time: new Date(2015,06,18),kwh: 0.75},
+                {time: new Date(2015,06,19),kwh: 0.64},
+                {time: new Date(2015,06,20),kwh: 0.66},
+                {time: new Date(2015,06,21),kwh: 0.64},
+                {time: new Date(2015,06,22),kwh: 0.68},
+                {time: new Date(2015,06,23),kwh: 2.89},
+                {time: new Date(2015,06,24),kwh: 4.37},
+                {time: new Date(2015,06,25),kwh: 2.61},
+                {time: new Date(2015,06,26),kwh: 1.88},
+                {time: new Date(2015,06,27),kwh: 1.79},
+                {time: new Date(2015,06,28),kwh: 3.82},
+                {time: new Date(2015,06,29),kwh: 5.83},
+                {time: new Date(2015,06,30),kwh: 2.80},
+                {time: new Date(2015,07,01),kwh: 4.52},
+                {time: new Date(2015,07,02),kwh: 3.61},
+                {time: new Date(2015,07,03),kwh: 3.87},
+                {time: new Date(2015,07,04),kwh: 4.91},
+                {time: new Date(2015,07,05),kwh: 5.51},
+                {time: new Date(2015,07,06),kwh: 4.85},
+                {time: new Date(2015,07,07),kwh: 4.64},
+                {time: new Date(2015,07,08),kwh: 6.22},
+                {time: new Date(2015,07,09),kwh: 5.29},
+                {time: new Date(2015,07,10),kwh: 5.26},
+                {time: new Date(2015,07,11),kwh: 3.96},
+                {time: new Date(2015,07,12),kwh: 5.00},
+                {time: new Date(2015,07,13),kwh: 3.60},
+                {time: new Date(2015,07,14),kwh: 2.45},
+                {time: new Date(2015,07,15),kwh: 3.68},
+                {time: new Date(2015,07,16),kwh: 4.32},
+                {time: new Date(2015,07,17),kwh: 3.88},
+                {time: new Date(2015,07,18),kwh: 4.35},
+                {time: new Date(2015,07,19),kwh: 4.38},
+                {time: new Date(2015,07,20),kwh: 7.77},
+                {time: new Date(2015,07,21),kwh: 5.64},
+                {time: new Date(2015,07,22),kwh: 4.12},
+                {time: new Date(2015,07,23),kwh: 2.21},
+                {time: new Date(2015,07,24),kwh: 4.24},
+                {time: new Date(2015,07,25),kwh: 4.17},
+                {time: new Date(2015,07,26),kwh: 3.32},
+                {time: new Date(2015,07,27),kwh: 5.60},
+                {time: new Date(2015,07,28),kwh: 2.52},
+                {time: new Date(2015,07,29),kwh: 2.18},
+                {time: new Date(2015,07,30),kwh: 2.12},
+                {time: new Date(2015,07,31),kwh: 3.74},
+                {time: new Date(2015,08,01),kwh: 2.04},
+                {time: new Date(2015,08,02),kwh: 1.21},
+                {time: new Date(2015,08,03),kwh: 1.72},
+                {time: new Date(2015,08,04),kwh: 2.21},
+                {time: new Date(2015,08,05),kwh: 3.67},
+                {time: new Date(2015,08,06),kwh: 3.61},
+                {time: new Date(2015,08,07),kwh: 4.78},
+                {time: new Date(2015,08,08),kwh: 2.36},
+                {time: new Date(2015,08,09),kwh: 2.63},
+                {time: new Date(2015,08,10),kwh: 2.20},
+                {time: new Date(2015,08,11),kwh: 3.12},
+                {time: new Date(2015,08,12),kwh: 2.94},
+                {time: new Date(2015,08,13),kwh: 1.98},
+                {time: new Date(2015,08,14),kwh: 3.25},
+                {time: new Date(2015,08,15),kwh: 3.76},
+                {time: new Date(2015,08,16),kwh: 6.74},
+                {time: new Date(2015,08,17),kwh: 5.57},
+                {time: new Date(2015,08,18),kwh: 5.49},
+                {time: new Date(2015,08,19),kwh: 6.14},
+                {time: new Date(2015,08,20),kwh: 6.98},
+                {time: new Date(2015,08,21),kwh: 4.95},
+                {time: new Date(2015,08,22),kwh: 4.48},
+                {time: new Date(2015,08,23),kwh: 3.93},
+                {time: new Date(2015,08,24),kwh: 5.53},
+                {time: new Date(2015,08,25),kwh: 3.46},
+                {time: new Date(2015,08,26),kwh: 2.33},
+                {time: new Date(2015,08,27),kwh: 3.69},
+                {time: new Date(2015,08,28),kwh: 3.49},
+                {time: new Date(2015,08,29),kwh: 4.71},
+                {time: new Date(2015,08,30),kwh: 6.49},
+                {time: new Date(2015,08,31),kwh: 3.08},
+                {time: new Date(2015,09,01),kwh: 1.68},
+                {time: new Date(2015,09,02),kwh: 1.02},
+                {time: new Date(2015,09,03),kwh: 1.00},
+                {time: new Date(2015,09,04),kwh: 0.97},
+                {time: new Date(2015,09,05),kwh: 0.99},
+                {time: new Date(2015,09,06),kwh: 0.98},
+                {time: new Date(2015,09,07),kwh: 1.00},
+                {time: new Date(2015,09,08),kwh: 4.29},
+                {time: new Date(2015,09,09),kwh: 7.65},
+                {time: new Date(2015,09,10),kwh: 2.96},
+                {time: new Date(2015,09,11),kwh: 1.61},
+                {time: new Date(2015,09,12),kwh: 1.13},
+                {time: new Date(2015,09,13),kwh: 2.04},
+                {time: new Date(2015,09,14),kwh: 3.28},
+                {time: new Date(2015,09,15),kwh: 1.84},
+                {time: new Date(2015,09,16),kwh: 1.36},
+                {time: new Date(2015,09,17),kwh: 5.31},
+                {time: new Date(2015,09,18),kwh: 2.20},
+                {time: new Date(2015,09,19),kwh: 2.52},
+                {time: new Date(2015,09,20),kwh: 2.40},
+                {time: new Date(2015,09,21),kwh: 10.06},
+                {time: new Date(2015,09,22),kwh: 1.85},
+                {time: new Date(2015,09,23),kwh: 2.79},
+                {time: new Date(2015,09,24),kwh: 3.69},
+                {time: new Date(2015,09,25),kwh: 2.02},
+                {time: new Date(2015,09,26),kwh: 1.94},
+                {time: new Date(2015,09,27),kwh: 4.46},
+                {time: new Date(2015,09,28),kwh: 5.82},
+                {time: new Date(2015,09,29),kwh: 1.59},
+                {time: new Date(2015,09,30),kwh: 2.90},
+                {time: new Date(2015,10,01),kwh: 3.31},
+                {time: new Date(2015,10,02),kwh: 1.54},
+                {time: new Date(2015,10,03),kwh: 1.21},
+                {time: new Date(2015,10,04),kwh: 2.98},
+                {time: new Date(2015,10,05),kwh: 2.75},
+                {time: new Date(2015,10,06),kwh: 1.98},
+                {time: new Date(2015,10,07),kwh: 2.13},
+                {time: new Date(2015,10,08),kwh: 2.77},
+                {time: new Date(2015,10,09),kwh: 4.34},
+                {time: new Date(2015,10,10),kwh: 4.53},
+                {time: new Date(2015,10,11),kwh: 3.18},
+                {time: new Date(2015,10,12),kwh: 2.81},
+                {time: new Date(2015,10,13),kwh: 3.97},
+                {time: new Date(2015,10,14),kwh: 4.07},
+                {time: new Date(2015,10,15),kwh: 3.19},
+                {time: new Date(2015,10,16),kwh: 2.81},
+                {time: new Date(2015,10,17),kwh: 4.05},
+                {time: new Date(2015,10,18),kwh: 4.51},
+                {time: new Date(2015,10,19),kwh: 3.20},
+                {time: new Date(2015,10,20),kwh: 3.21},
+                {time: new Date(2015,10,21),kwh: 5.14},
+                {time: new Date(2015,10,22),kwh: 5.24},
+                {time: new Date(2015,10,23),kwh: 13.90},
+                {time: new Date(2015,10,24),kwh: 5.65},
+                {time: new Date(2015,10,25),kwh: 4.33},
+                {time: new Date(2015,10,26),kwh: 5.68},
+                {time: new Date(2015,10,27),kwh: 6.73},
+                {time: new Date(2015,10,28),kwh: 3.76},
+                {time: new Date(2015,10,29),kwh: 8.30},
+                {time: new Date(2015,10,30),kwh: 1.41},
+                {time: new Date(2015,10,31),kwh: 4.25},
+                {time: new Date(2015,11,01),kwh: 19.71},
+                {time: new Date(2015,11,02),kwh: 15.89},
+                {time: new Date(2015,11,03),kwh: 17.00},
+                {time: new Date(2015,11,04),kwh: 18.38},
+                {time: new Date(2015,11,05),kwh: 17.09},
+                {time: new Date(2015,11,06),kwh: 14.29},
+                {time: new Date(2015,11,07),kwh: 14.08},
+                {time: new Date(2015,11,08),kwh: 13.55},
+                {time: new Date(2015,11,09),kwh: 17.31},
+                {time: new Date(2015,11,10),kwh: 19.70},
+                {time: new Date(2015,11,11),kwh: 9.05},
+                {time: new Date(2015,11,12),kwh: 1.40},
+                {time: new Date(2015,11,13),kwh: 2.76},
+                {time: new Date(2015,11,14),kwh: 2.83},
+                {time: new Date(2015,11,15),kwh: 6.17},
+                {time: new Date(2015,11,16),kwh: 29.79},
+                {time: new Date(2015,11,17),kwh: 11.12},
+                {time: new Date(2015,11,18),kwh: 7.38},
+                {time: new Date(2015,11,19),kwh: 20.28},
+                {time: new Date(2015,11,20),kwh: 23.77},
+                {time: new Date(2015,11,21),kwh: 23.16},
+                {time: new Date(2015,11,22),kwh: 21.01},
+                {time: new Date(2015,11,23),kwh: 17.24},
+                {time: new Date(2015,11,24),kwh: 17.40},
+                {time: new Date(2015,11,25),kwh: 31.29},
+                {time: new Date(2015,11,26),kwh: 36.91},
+                {time: new Date(2015,11,27),kwh: 34.27},
+                {time: new Date(2015,11,28),kwh: 34.23},
+                {time: new Date(2015,11,29),kwh: 36.06},
+                {time: new Date(2015,11,30),kwh: 34.83},
+                {time: new Date(2015,12,01),kwh: 25.97},
+                {time: new Date(2015,12,02),kwh: 5.21},
+                {time: new Date(2015,12,03),kwh: 3.53},
+                {time: new Date(2015,12,04),kwh: 6.54},
+                {time: new Date(2015,12,05),kwh: 7.93},
+                {time: new Date(2015,12,06),kwh: 14.03},
+                {time: new Date(2015,12,07),kwh: 26.26},
+                {time: new Date(2015,12,08),kwh: 3.10},
+                {time: new Date(2015,12,09),kwh: 6.38},
+                {time: new Date(2015,12,10),kwh: 10.20},
+                {time: new Date(2015,12,11),kwh: 9.32},
+                {time: new Date(2015,12,12),kwh: 13.91},
+                {time: new Date(2015,12,13),kwh: 13.29},
+                {time: new Date(2015,12,14),kwh: 15.22},
+                {time: new Date(2015,12,15),kwh: 14.22},
+                {time: new Date(2015,12,16),kwh: 18.37},
+                {time: new Date(2015,12,17),kwh: 22.31},
+                {time: new Date(2015,12,18),kwh: 42.29},
+                {time: new Date(2015,12,19),kwh: 19.58},
+                {time: new Date(2015,12,20),kwh: 6.16},
+                {time: new Date(2015,12,21),kwh: 0.92},
+                {time: new Date(2015,12,22),kwh: 0.89},
+                {time: new Date(2015,12,23),kwh: 0.88},
+                {time: new Date(2015,12,24),kwh: 0.87},
+                {time: new Date(2015,12,25),kwh: 0.91},
+                {time: new Date(2015,12,26),kwh: 0.84},
+                {time: new Date(2015,12,27),kwh: 1.02},
+                {time: new Date(2015,12,28),kwh: 46.72},
+                {time: new Date(2015,12,29),kwh: 31.40},
+                {time: new Date(2015,12,30),kwh: 36.01},
+                {time: new Date(2015,12,31),kwh: 36.01},
+                
+            ];
+             
+            $("#BCHydroChart").dxChart({
+                dataSource: BCHydroChartSource,
+                commonSeriesSettings: {
+                    label: {
+                        visible: false
+                    }
+                }, 
+                series: {
+                    type: 'area',
+                    argumentField: 'time',
+                    valueField: 'kwh',
+                    title: 'KWh'
+                }, 
+                argumentAxis: {
+                    label: {
+                        format: 'month'
+                    }
+                },
+                title: 'KWh per day'
+            });
+
+        </script>
+        -->
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

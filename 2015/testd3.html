@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Steven Smethurst">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD22aUA99mlAPbWnQD33rAA/ffuAPrpywD89OYA++nLAPfbqAD55sMA99igAP78+QD67tYA/fnxAP758QD99ukA/PPhAP/+/AD43rEA9tupAPnmxAD32KEA9dWZAP78+gD42KEA9tWZAPjgtAD9+fIA+eC0AP758gD33awA+ejHAProxwD+/v0A+eW/APjitwD++/UA99uqAPrmxQD22KIA/fnzAPngtQD99usA+N2tAP7+/gD78NsA//7+AP779gD9+O4A9tijAPXVmwD44LYA+eC2APfdrgD22qYA+ujJAPnlwQD2154A+OK5APrt1AD++/cA99+xAPrqzAD++O8A99mhAP79+gD33a8A99qnAPbXnwD88N0A99efAP77+AD437IA/fjwAPfUlwD43KoA/v37APrkvQD//fsA/frzAP768wD///4A99qoAPbXoAD11JgA+N+zAPrqzgD33KsA+efGAPjcqwD32aMA9+G2APzv2QD54bYA++zRAP337AD///8A/vz3APjcrAD22aQA99mkAPzy4gD++vUA+eG3APferwD205QA+N6vAPz05QD99OUA+/HdAPbYnwD+/PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYGBgYGBgYDAfSBxeZmBgYGBgIWBgLk1qaD0jWwM+YGBgQWtgUWdiNBtgYGBgbVhgYEJgYEUlWGBMHWBgYGALUB0SYGBVEmBgYChVTGBgYGAiSGBOASoENgA4DlIvYGBgXVlgQWNhZGQBASYUE2BgYDpEYBE1XBUVJydXT2RlYGBlAiBgCWxEU1NTK2BjM2BgYDIyBklMQwICORBgYzFgYGA/GRlWLGAtNzxfLgJSYGBgYA9UVBYeGmgIFzsyVmBgYGBgYAxARksNYGAKGUdgYGBgYGBgYGBgYGApSgVgYGBgYGBgYGBgYBsYaQdgYGBgYGBgYGBvIFpuIiRgYGBgYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    <title>2015 Personal dashboard</title>
+
+
+	<!-- Latest Bootstrap -->
+	<link rel="stylesheet" href="3rdparty/bootstrap.min.css">
+	<link rel="stylesheet" href="3rdparty/bootstrap-theme.min.css">
+	<script src="3rdparty/jquery-2.1.4.min.js"></script>
+	<script src="3rdparty/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- D3 -->
+    <script type="text/javascript" src="3rdparty/d3.min.js" charset="utf-8"></script>
+
+    <!-- NVD3 -->
+    <link rel="stylesheet" href="3rdparty/nv.d3.min.css">
+    <script type="text/javascript" src="3rdparty/nv.d3.min.js" charset="utf-8"></script>
+
+
+  </head>
+  <body>    
+      <div class="container">
+        <div class="navbar navbar-default" role="navigation">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">2015</a></li>
+            <li><a href="../2014/">2014</a></li>
+          </ul>
+        </div>
+      </div>
+    
+
+    <div class="container">
+	    <style> /* set the CSS */
+		
+			path { 
+			    stroke: steelblue;
+			    stroke-width: 2;
+			    fill: none;
+			}
+
+			.axis path,
+			.axis line {
+			    fill: none;
+			    stroke: grey;
+			    stroke-width: 1;
+			    shape-rendering: crispEdges;
+			}
+
+		</style>
+
+		<div id="visa"></div>
+		<div id="tweets"></div>
+
+	    <script type="text/javascript">
+	    	var parseDate = d3.time.format("%Y-%m-%d").parse;
+	    	var csvPath = "data/all.csv" ; 
+	    	var database ;
+			var chartXRange ;  
+			var chartXAxis ;
+
+			// Set the dimensions of the canvas / graph
+			var margin = {top: 30, right: 20, bottom: 30, left: 50},
+			    width =  1200 - margin.left - margin.right,
+			    height = 600 - margin.top - margin.bottom;				
+	    	
+
+	    	// Get the data from the CSV file, format it as nessary. 
+		    d3.csv(csvPath, function(error, data) {
+		  		if (error) throw error;
+				
+				// format the data 
+			    data.forEach(function(d) {
+			        d.date = parseDate(d.date);
+			        d.visa = +d.visa;
+			        d.twitter_tweets = +d.twitter_tweets;
+			    });
+
+			    // The X range is always the same. 
+				chartXRange = d3.time.scale().range([0, width]);
+				chartXAxis = d3.svg.axis().scale(chartXRange).orient("bottom").ticks(12);
+				chartXRange.domain(d3.extent(data, function(d) { return d.date; }));
+
+			    // Make the data global. 
+				database = data ; 
+
+				// Load the charts. 
+		  		LoadCharts() ; 
+			});
+
+		    function LoadCharts() {
+			    console.log(database);	
+		    	ChartVisa(); 
+		    	ChartTweets(); 
+		    }
+
+
+		    function ChartVisa() {
+
+	    	
+
+		    // Set the ranges
+			var y = d3.scale.linear().range([height, 0]);
+			var yAxis = d3.svg.axis().scale(y).orient("left").ticks(5);
+
+			// Define the line
+			var valueline = d3.svg.line()
+			    .x(function(d) { return chartXRange(d.date); })
+			    .y(function(d) { return y(d.visa); });			    
+
+			// Adds the svg canvas
+			var svg = d3.select("#visa")
+			    .append("svg")
+			        .attr("width", width + margin.left + margin.right)
+			        .attr("height", height + margin.top + margin.bottom)
+			    .append("g")
+			        .attr("transform", 
+			              "translate(" + margin.left + "," + margin.top + ")");
+
+		    // Scale the range of the data		    
+		    y.domain([0, d3.max(database, function(d) { return d.visa; })]);
+
+		    // Add the valueline path.
+		    svg.append("path")
+		        .attr("class", "line")
+		        .attr("d", valueline(database));
+
+		    // Add the X Axis
+		    svg.append("g")
+		        .attr("class", "x axis")
+		        .attr("transform", "translate(0," + height + ")")
+		        .call(chartXAxis);
+
+		    // Add the Y Axis
+		    svg.append("g")
+		        .attr("class", "y axis")
+		        .call(yAxis);
+		}
+	    </script>
+	</div>
+  </body>
+</html>
