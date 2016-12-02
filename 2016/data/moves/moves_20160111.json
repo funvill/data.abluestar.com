@@ -1,0 +1,61 @@
+[{
+  "summary": [{
+    "distance": 748,
+    "duration": 736,
+    "steps": 1032,
+    "group": "walking",
+    "activity": "walking"
+  }],
+  "segments": [{
+    "startTime": "20160110T230802-0800",
+    "lastUpdate": "20160112T190510Z",
+    "activities": [
+      {
+        "startTime": "20160111T001730-0800",
+        "manual": false,
+        "distance": 20,
+        "duration": 30,
+        "trackPoints": [],
+        "steps": 40,
+        "endTime": "20160111T001800-0800",
+        "group": "walking",
+        "activity": "walking"
+      },
+      {
+        "startTime": "20160111T133603-0800",
+        "manual": false,
+        "distance": 697,
+        "duration": 667,
+        "trackPoints": [],
+        "steps": 930,
+        "endTime": "20160111T134710-0800",
+        "group": "walking",
+        "activity": "walking"
+      },
+      {
+        "startTime": "20160111T231127-0800",
+        "manual": false,
+        "distance": 31,
+        "duration": 39,
+        "trackPoints": [],
+        "steps": 62,
+        "endTime": "20160111T231206-0800",
+        "group": "walking",
+        "activity": "walking"
+      }
+    ],
+    "place": {
+      "id": 52989451,
+      "location": {
+        "lon": -123.0955654948,
+        "lat": 49.2609911813
+      },
+      "name": "Home",
+      "type": "home"
+    },
+    "endTime": "20160112T084709-0800",
+    "type": "place"
+  }],
+  "lastUpdate": "20160112T190510Z",
+  "date": "20160111"
+}]

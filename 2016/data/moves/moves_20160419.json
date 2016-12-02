@@ -1,0 +1,457 @@
+[{
+  "summary": [
+    {
+      "distance": 1233,
+      "duration": 1528,
+      "steps": 2128,
+      "group": "walking",
+      "activity": "walking"
+    },
+    {
+      "distance": 498,
+      "duration": 223,
+      "group": "cycling",
+      "activity": "cycling"
+    },
+    {
+      "distance": 2622,
+      "duration": 703,
+      "group": "transport",
+      "activity": "transport"
+    }
+  ],
+  "segments": [
+    {
+      "startTime": "20160418T221741-0700",
+      "lastUpdate": "20160419T165731Z",
+      "activities": [{
+        "startTime": "20160419T083746-0700",
+        "manual": false,
+        "distance": 30,
+        "duration": 42,
+        "trackPoints": [],
+        "steps": 61,
+        "endTime": "20160419T083828-0700",
+        "group": "walking",
+        "activity": "walking"
+      }],
+      "place": {
+        "id": 8806369,
+        "location": {
+          "lon": -123.0954408406,
+          "lat": 49.2609939412
+        },
+        "name": "Home",
+        "type": "home"
+      },
+      "endTime": "20160419T084141-0700",
+      "type": "place"
+    },
+    {
+      "startTime": "20160419T084141-0700",
+      "lastUpdate": "20160419T165731Z",
+      "activities": [
+        {
+          "startTime": "20160419T084141-0700",
+          "manual": false,
+          "distance": 1079,
+          "duration": 266,
+          "trackPoints": [
+            {
+              "time": "20160419T084141-0700",
+              "lon": -123.09544,
+              "lat": 49.260994
+            },
+            {
+              "time": "20160419T084232-0700",
+              "lon": -123.09715,
+              "lat": 49.26023
+            },
+            {
+              "time": "20160419T084351-0700",
+              "lon": -123.09855,
+              "lat": 49.260364
+            },
+            {
+              "time": "20160419T084410-0700",
+              "lon": -123.09849,
+              "lat": 49.259446
+            },
+            {
+              "time": "20160419T084607-0700",
+              "lon": -123.10647,
+              "lat": 49.258163
+            }
+          ],
+          "endTime": "20160419T084607-0700",
+          "group": "transport",
+          "activity": "transport"
+        },
+        {
+          "startTime": "20160419T084607-0700",
+          "manual": false,
+          "distance": 498,
+          "duration": 223,
+          "trackPoints": [
+            {
+              "time": "20160419T084607-0700",
+              "lon": -123.10647,
+              "lat": 49.258163
+            },
+            {
+              "time": "20160419T084737-0700",
+              "lon": -123.10915,
+              "lat": 49.257804
+            },
+            {
+              "time": "20160419T084950-0700",
+              "lon": -123.11213,
+              "lat": 49.256993
+            }
+          ],
+          "endTime": "20160419T084950-0700",
+          "group": "cycling",
+          "activity": "cycling"
+        }
+      ],
+      "endTime": "20160419T084950-0700",
+      "type": "move"
+    },
+    {
+      "startTime": "20160419T084951-0700",
+      "lastUpdate": "20160419T200631Z",
+      "activities": [
+        {
+          "startTime": "20160419T085108-0700",
+          "manual": false,
+          "distance": 5,
+          "duration": 7,
+          "trackPoints": [],
+          "steps": 11,
+          "endTime": "20160419T085115-0700",
+          "group": "walking",
+          "activity": "walking"
+        },
+        {
+          "startTime": "20160419T100628-0700",
+          "manual": false,
+          "distance": 161,
+          "duration": 152,
+          "trackPoints": [],
+          "steps": 215,
+          "endTime": "20160419T100900-0700",
+          "group": "walking",
+          "activity": "walking"
+        }
+      ],
+      "place": {
+        "id": 9572348,
+        "location": {
+          "lon": -123.1121348339,
+          "lat": 49.2569934861
+        },
+        "name": "Chipkin automation systems",
+        "type": "work"
+      },
+      "endTime": "20160419T120652-0700",
+      "type": "place"
+    },
+    {
+      "startTime": "20160419T120652-0700",
+      "lastUpdate": "20160419T200631Z",
+      "activities": [{
+        "startTime": "20160419T120652-0700",
+        "manual": false,
+        "distance": 559,
+        "duration": 714,
+        "trackPoints": [
+          {
+            "time": "20160419T120652-0700",
+            "lon": -123.11213,
+            "lat": 49.256993
+          },
+          {
+            "time": "20160419T120753-0700",
+            "lon": -123.11226,
+            "lat": 49.256949
+          },
+          {
+            "time": "20160419T120853-0700",
+            "lon": -123.11328,
+            "lat": 49.256851
+          },
+          {
+            "time": "20160419T120912-0700",
+            "lon": -123.11354,
+            "lat": 49.256877
+          },
+          {
+            "time": "20160419T121214-0700",
+            "lon": -123.11508,
+            "lat": 49.256423
+          },
+          {
+            "time": "20160419T121237-0700",
+            "lon": -123.11513,
+            "lat": 49.255505
+          },
+          {
+            "time": "20160419T121616-0700",
+            "lon": -123.11525,
+            "lat": 49.255241
+          },
+          {
+            "time": "20160419T121634-0700",
+            "lon": -123.11522,
+            "lat": 49.255517
+          },
+          {
+            "time": "20160419T121846-0700",
+            "lon": -123.11523,
+            "lat": 49.256559
+          }
+        ],
+        "steps": 891,
+        "endTime": "20160419T121846-0700",
+        "group": "walking",
+        "activity": "walking"
+      }],
+      "endTime": "20160419T121846-0700",
+      "type": "move"
+    },
+    {
+      "startTime": "20160419T121847-0700",
+      "lastUpdate": "20160419T200631Z",
+      "activities": [{
+        "startTime": "20160419T121901-0700",
+        "manual": false,
+        "distance": 10,
+        "duration": 13,
+        "trackPoints": [],
+        "steps": 21,
+        "endTime": "20160419T121914-0700",
+        "group": "walking",
+        "activity": "walking"
+      }],
+      "place": {
+        "id": 27745223,
+        "location": {
+          "lon": -123.11522560301337,
+          "lat": 49.25655934454117
+        },
+        "name": "Shoppers Drug Mart",
+        "foursquareId": "4ae22951f964a520568b21e3",
+        "type": "foursquare"
+      },
+      "endTime": "20160419T122129-0700",
+      "type": "place"
+    },
+    {
+      "startTime": "20160419T122129-0700",
+      "lastUpdate": "20160419T200631Z",
+      "activities": [{
+        "startTime": "20160419T122129-0700",
+        "manual": false,
+        "distance": 280,
+        "duration": 336,
+        "trackPoints": [
+          {
+            "time": "20160419T122129-0700",
+            "lon": -123.11523,
+            "lat": 49.256559
+          },
+          {
+            "time": "20160419T122336-0700",
+            "lon": -123.11503,
+            "lat": 49.256805
+          },
+          {
+            "time": "20160419T122353-0700",
+            "lon": -123.11474,
+            "lat": 49.256969
+          },
+          {
+            "time": "20160419T122415-0700",
+            "lon": -123.11449,
+            "lat": 49.256959
+          },
+          {
+            "time": "20160419T122705-0700",
+            "lon": -123.11213,
+            "lat": 49.256993
+          }
+        ],
+        "steps": 552,
+        "endTime": "20160419T122705-0700",
+        "group": "walking",
+        "activity": "walking"
+      }],
+      "endTime": "20160419T122705-0700",
+      "type": "move"
+    },
+    {
+      "startTime": "20160419T122706-0700",
+      "lastUpdate": "20160420T012740Z",
+      "activities": [
+        {
+          "startTime": "20160419T122732-0700",
+          "manual": false,
+          "distance": 35,
+          "duration": 47,
+          "trackPoints": [],
+          "steps": 71,
+          "endTime": "20160419T122819-0700",
+          "group": "walking",
+          "activity": "walking"
+        },
+        {
+          "startTime": "20160419T154620-0700",
+          "manual": false,
+          "distance": 35,
+          "duration": 56,
+          "trackPoints": [],
+          "steps": 70,
+          "endTime": "20160419T154716-0700",
+          "group": "walking",
+          "activity": "walking"
+        },
+        {
+          "startTime": "20160419T170953-0700",
+          "manual": false,
+          "distance": 50,
+          "duration": 71,
+          "trackPoints": [],
+          "steps": 100,
+          "endTime": "20160419T171104-0700",
+          "group": "walking",
+          "activity": "walking"
+        }
+      ],
+      "place": {
+        "id": 9572348,
+        "location": {
+          "lon": -123.1121348339,
+          "lat": 49.2569934861
+        },
+        "name": "Chipkin automation systems",
+        "type": "work"
+      },
+      "endTime": "20160419T171222-0700",
+      "type": "place"
+    },
+    {
+      "startTime": "20160419T171222-0700",
+      "lastUpdate": "20160420T012740Z",
+      "activities": [{
+        "startTime": "20160419T171222-0700",
+        "manual": false,
+        "distance": 917,
+        "duration": 190,
+        "trackPoints": [
+          {
+            "time": "20160419T171222-0700",
+            "lon": -123.11213,
+            "lat": 49.256993
+          },
+          {
+            "time": "20160419T171532-0700",
+            "lon": -123.10124,
+            "lat": 49.257957
+          }
+        ],
+        "endTime": "20160419T171532-0700",
+        "group": "transport",
+        "activity": "transport"
+      }],
+      "endTime": "20160419T171532-0700",
+      "type": "move"
+    },
+    {
+      "startTime": "20160419T171532-0700",
+      "lastUpdate": "20160420T012740Z",
+      "activities": [{
+        "startTime": "20160419T171546-0700",
+        "manual": false,
+        "distance": 62,
+        "duration": 82,
+        "trackPoints": [],
+        "steps": 124,
+        "endTime": "20160419T171708-0700",
+        "group": "walking",
+        "activity": "walking"
+      }],
+      "place": {
+        "id": 15903518,
+        "location": {
+          "lon": -123.10124,
+          "lat": 49.25795693402056
+        },
+        "name": "Brewery Creek",
+        "foursquareId": "4aa89591f964a5209e5120e3",
+        "type": "foursquare"
+      },
+      "endTime": "20160419T173431-0700",
+      "type": "place"
+    },
+    {
+      "startTime": "20160419T173431-0700",
+      "lastUpdate": "20160420T012740Z",
+      "activities": [{
+        "startTime": "20160419T173431-0700",
+        "manual": false,
+        "distance": 626,
+        "duration": 247,
+        "trackPoints": [
+          {
+            "time": "20160419T173431-0700",
+            "lon": -123.10124,
+            "lat": 49.257957
+          },
+          {
+            "time": "20160419T173506-0700",
+            "lon": -123.09862,
+            "lat": 49.258893
+          },
+          {
+            "time": "20160419T173839-0700",
+            "lon": -123.09544,
+            "lat": 49.260994
+          }
+        ],
+        "endTime": "20160419T173838-0700",
+        "group": "transport",
+        "activity": "transport"
+      }],
+      "endTime": "20160419T173839-0700",
+      "type": "move"
+    },
+    {
+      "startTime": "20160419T173839-0700",
+      "lastUpdate": "20160420T144113Z",
+      "activities": [{
+        "startTime": "20160419T173839-0700",
+        "manual": false,
+        "distance": 6,
+        "duration": 8,
+        "trackPoints": [],
+        "steps": 12,
+        "endTime": "20160419T173847-0700",
+        "group": "walking",
+        "activity": "walking"
+      }],
+      "place": {
+        "id": 8806369,
+        "location": {
+          "lon": -123.0954408406,
+          "lat": 49.2609939412
+        },
+        "name": "Home",
+        "type": "home"
+      },
+      "endTime": "20160420T065031-0700",
+      "type": "place"
+    }
+  ],
+  "lastUpdate": "20160420T144113Z",
+  "date": "20160419"
+}]

@@ -1,0 +1,20 @@
+[{
+  "summary": null,
+  "segments": [{
+    "startTime": "20160407T231651-0700",
+    "lastUpdate": "20160408T125822Z",
+    "place": {
+      "id": 8806369,
+      "location": {
+        "lon": -123.0954408406,
+        "lat": 49.2609939412
+      },
+      "name": "Home",
+      "type": "home"
+    },
+    "endTime": "20160408T050524-0700",
+    "type": "place"
+  }],
+  "lastUpdate": "20160408T125822Z",
+  "date": "20160408"
+}]

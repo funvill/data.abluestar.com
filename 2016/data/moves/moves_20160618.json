@@ -1,0 +1,159 @@
+[{
+  "summary": [
+    {
+      "distance": 1866,
+      "duration": 1780,
+      "steps": 2565,
+      "group": "walking",
+      "activity": "walking"
+    },
+    {
+      "distance": 829,
+      "duration": 259,
+      "group": "transport",
+      "activity": "transport"
+    }
+  ],
+  "segments": [
+    {
+      "startTime": "20160617T212904-0700",
+      "lastUpdate": "20160618T214335Z",
+      "activities": [
+        {
+          "startTime": "20160618T125757-0700",
+          "manual": false,
+          "distance": 61,
+          "duration": 68,
+          "trackPoints": [],
+          "steps": 123,
+          "endTime": "20160618T125905-0700",
+          "group": "walking",
+          "activity": "walking"
+        },
+        {
+          "startTime": "20160618T130320-0700",
+          "manual": false,
+          "distance": 415,
+          "duration": 421,
+          "trackPoints": [],
+          "steps": 553,
+          "endTime": "20160618T131021-0700",
+          "group": "walking",
+          "activity": "walking"
+        }
+      ],
+      "place": {
+        "id": 92450218,
+        "location": {
+          "lon": -123.085948276,
+          "lat": 49.2626381458
+        },
+        "name": "Lori house ",
+        "type": "home"
+      },
+      "endTime": "20160618T133903-0700",
+      "type": "place"
+    },
+    {
+      "startTime": "20160618T133903-0700",
+      "lastUpdate": "20160618T214335Z",
+      "activities": [{
+        "startTime": "20160618T133903-0700",
+        "manual": false,
+        "distance": 829,
+        "duration": 259,
+        "trackPoints": [
+          {
+            "time": "20160618T133903-0700",
+            "lon": -123.08595,
+            "lat": 49.262638
+          },
+          {
+            "time": "20160618T134322-0700",
+            "lon": -123.09557,
+            "lat": 49.260991
+          }
+        ],
+        "endTime": "20160618T134322-0700",
+        "group": "transport",
+        "activity": "transport"
+      }],
+      "endTime": "20160618T134322-0700",
+      "type": "move"
+    },
+    {
+      "startTime": "20160618T140336-0700",
+      "lastUpdate": "20160619T210339Z",
+      "activities": [
+        {
+          "startTime": "20160618T160811-0700",
+          "manual": false,
+          "distance": 7,
+          "duration": 10,
+          "trackPoints": [],
+          "steps": 15,
+          "endTime": "20160618T160821-0700",
+          "group": "walking",
+          "activity": "walking"
+        },
+        {
+          "startTime": "20160618T181148-0700",
+          "manual": false,
+          "distance": 15,
+          "duration": 30,
+          "trackPoints": [],
+          "steps": 30,
+          "endTime": "20160618T181218-0700",
+          "group": "walking",
+          "activity": "walking"
+        },
+        {
+          "startTime": "20160618T192134-0700",
+          "manual": false,
+          "distance": 1111,
+          "duration": 997,
+          "trackPoints": [],
+          "steps": 1481,
+          "endTime": "20160618T193811-0700",
+          "group": "walking",
+          "activity": "walking"
+        },
+        {
+          "startTime": "20160618T200858-0700",
+          "manual": false,
+          "distance": 30,
+          "duration": 50,
+          "trackPoints": [],
+          "steps": 60,
+          "endTime": "20160618T200948-0700",
+          "group": "walking",
+          "activity": "walking"
+        },
+        {
+          "startTime": "20160618T234752-0700",
+          "manual": false,
+          "distance": 227,
+          "duration": 204,
+          "trackPoints": [],
+          "steps": 303,
+          "endTime": "20160618T235116-0700",
+          "group": "walking",
+          "activity": "walking"
+        }
+      ],
+      "place": {
+        "id": 8806369,
+        "location": {
+          "lon": -123.0954408406,
+          "lat": 49.2609939412
+        },
+        "name": "Home",
+        "type": "home"
+      },
+      "endTime": "20160619T130504-0700",
+      "type": "place"
+    }
+  ],
+  "lastUpdate": "20160619T210339Z",
+  "date": "20160618"
+}]
