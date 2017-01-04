@@ -271,7 +271,7 @@
     },
     {
       "startTime": "20161201T171642-0800",
-      "lastUpdate": "20161202T045403Z",
+      "lastUpdate": "20161202T181343Z",
       "activities": [
         {
           "startTime": "20161201T171741-0800",
@@ -305,10 +305,10 @@
         "name": "Home",
         "type": "home"
       },
-      "endTime": "20161201T205340-0800",
+      "endTime": "20161202T090600-0800",
       "type": "place"
     }
   ],
-  "lastUpdate": "20161202T045403Z",
+  "lastUpdate": "20161202T181343Z",
   "date": "20161201"
 }]
