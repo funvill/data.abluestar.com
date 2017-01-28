@@ -67,7 +67,7 @@ $startIteration = 0 ;
 $maxIteration = 35 ; 
 
 $year = 2016 ; 
-for( $month = 4 ; $month <= 12 ; $month++ ) {
+for( $month = 12 ; $month <= 12 ; $month++ ) {
 	$max_days = days_in_month($year, $month ); 
 	for( $day = 1 ; $day <= $max_days ; $day++) {
 		$iteration++;

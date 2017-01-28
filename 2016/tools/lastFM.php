@@ -15,7 +15,7 @@ $num_of_requests = 0 ;
 echo '<pre>';
 // Only scan this last years worth of Last.fm data. 
 $year = 2016 ; 
-for( $month = 1 ; $month <= 12 ; $month++ ) {
+for( $month = 12 ; $month <= 12 ; $month++ ) {
 	$max_days = days_in_month($year, $month ); 
 	for( $day = 1 ; $day <= $max_days ; $day++) {
 		if( $num_of_requests > 400 ) {
