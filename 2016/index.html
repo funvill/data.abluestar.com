@@ -29,6 +29,9 @@
   <body>    
       <div class="container">
         <div class="navbar navbar-default" role="navigation">
+         <div class="navbar-header">
+            <a class="navbar-brand" href="#">2016</a>
+          </div>            
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">2016</a></li>
             <li><a href="../2015/">2016</a></li>
@@ -41,7 +44,6 @@
     <div class="container">
 
         <h2 id='about'>About</h2>
-        <p>Step count, Data from receue time, banking, hydro, bills. Previouse year <a href='http://data.abluestar.com/2015/'>2015</a></p>
         <p>Inspired by <a href='http://blog.stephenwolfram.com/2012/03/the-personal-analytics-of-my-life/'>The Personal Analytics of My Life by Stephen Wolfram</a></p>
 
         <h3>Tools used:</h3>
@@ -75,6 +77,7 @@
         #totals td { text-align: right; }
         </style>
         <table id='totals'>
+            <tr><th>Stat</th><th style='text-align: right;'>Value</th><th style='text-align: right;'>Change</th></tr>
             <tr><th>Tweets</th><td>524</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 211</i>)</td></tr>
             <tr><th>twitter_impressions</th><td>108,088</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #3F3;'> 5,088</i>)</td></tr>
             <tr><th>twitter_engagements</th><td>2,926</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 788</i>)</td></tr>
@@ -86,7 +89,7 @@
             <tr><th>lastfm_songsPlayed</th><td>4,990</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 2,517</i>)</td></tr>
             <tr><th>github_checkins</th><td>351</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 10</i>)</td></tr>
             <tr><th>foursquare_checkins</th><td>849</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 85</i>)</td></tr>
-            <tr><th>bchydro_netConsumption</th><td> ToDo: ????? 2,757.45 kWh</td></tr>
+            <tr><th>bchydro_netConsumption</th><td> ToDo:</td></tr>
             <tr><th>Visa</th><td>{redacted}</td></tr>
             <tr><th>Google Searches</th><td> ToDo: ????? 10,236</td></tr>
             <tr><th>Steps</th><td>2,630,919</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 474,791</i>)</td></tr>
@@ -215,7 +218,9 @@
                 </div>
             </div>
         </div>
-        <br /><br /><br />
+        <br /><br />
+        Last updated: January 2017
+        <br />
         <style>
             .entertainment, .news, .social, .shopping {
                 color: red ;
