@@ -34,7 +34,7 @@
           </div>            
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">2016</a></li>
-            <li><a href="../2015/">2016</a></li>
+            <li><a href="../2015/">2015</a></li>
             <li><a href="../2014/">2014</a></li>
           </ul>
         </div>
@@ -84,28 +84,29 @@
         </ul>
 
         <h3 id='totals'>Totals</h3>
-        <p>Totals from stats</p>
+        <p>This is a year total summery of the daily stats in the graph below.</p>
         <style>
         #totals td { text-align: right; }
+        #totals .changeInValues { padding-left: 20px; }
         </style>
         <table id='totals'>
             <tr><th>Stat</th><th style='text-align: right;'>Value</th><th style='text-align: right;'>Change</th></tr>
-            <tr><th>Twitter tweets</th><td>524</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 211</i>)</td></tr>
-            <tr><th>Twitter impressions</th><td>108,088</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #3F3;'> 5,088</i>)</td></tr>
-            <tr><th>Twitter engagements</th><td>2,926</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 788</i>)</td></tr>
-            <tr><th>Twitter retweets</th><td>110</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 5</i>)</td></tr>
-            <tr><th>Twitter replies</th><td>115</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 29</i>)</td></tr>
-            <tr><th>Twitter likes</th><td>295</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 36</i>)</td></tr>
-            <tr><th>Twitter userProfileClicks</th><td>179</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 44</i>)</td></tr>
-            <tr><th>Twitter UrlClicks</th><td>418</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 5</i>)</td></tr>
-            <tr><th>Lastfm songsPlayed</th><td>4,990</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 2,517</i>)</td></tr>
-            <tr><th>Github checkins</th><td>351</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 10</i>)</td></tr>
-            <tr><th>Foursquare checkins</th><td>849</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 85</i>)</td></tr>
-            <tr><th>BC Hydro</th><td> ToDo:</td><td>ToDo</td></tr>
-            <tr><th>Visa</th><td>{redacted}</td><td>ToDo</td></tr>
-            <tr><th>Google Searches</th><td>ToDo</td><td>ToDo</td></tr>
-            <tr><th>Steps</th><td>2,630,919</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 474,791</i>)</td></tr>
-            <tr><th>Netflix</th><td>320</td><td>New</td></tr>
+            <tr><th>Twitter tweets</th><td>524</td><td class='changeInValues'> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 211</i>)</td></tr>
+            <tr><th>Twitter impressions</th><td>108,088</td><td class='changeInValues'> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #00F;'> 5,088</i>)</td></tr>
+            <tr><th>Twitter engagements</th><td>2,926</td><td class='changeInValues' (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #00F;'> 788</i>)</td></tr>
+            <tr><th>Twitter retweets</th><td>110</td><td class='changeInValues'> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 5</i>)</td></tr>
+            <tr><th>Twitter replies</th><td>115</td><td class='changeInValues'> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 29</i>)</td></tr>
+            <tr><th>Twitter likes</th><td>295</td><td class='changeInValues'> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 36</i>)</td></tr>
+            <tr><th>Twitter userProfileClicks</th><td>179</td><td class='changeInValues'> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #00F;'> 44</i>)</td></tr>
+            <tr><th>Twitter UrlClicks</th><td>418</td><td class='changeInValues'> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 5</i>)</td></tr>
+            <tr><th>Lastfm songsPlayed</th><td>4,990</td><td class='changeInValues'> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 2,517</i>)</td></tr>
+            <tr><th>Github checkins</th><td>351</td><td class='changeInValues'> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 10</i>)</td></tr>
+            <tr><th>Foursquare checkins</th><td>849</td><td class='changeInValues'> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #00F;'> 85</i>)</td></tr>
+            <tr><th>BC Hydro</th><td>2838.55 kWh</td><td class='changeInValues'>(<i class="fa fa-arrow-up" aria-hidden="true" style='color: #00F;'> 81.1</i>) </td></tr>
+            <tr><th>Visa</th><td>{redacted}</td><td class='changeInValues'>{redacted}</td></tr>
+            <tr><th>Google Searches</th><td>ToDo</td><td class='changeInValues'>ToDo</td></tr>
+            <tr><th>Steps</th><td>2,630,919</td><td class='changeInValues'> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #00F;'> 474,791</i>)</td></tr>
+            <tr><th>Netflix</th><td>320</td><td class='changeInValues'>New</td></tr>
             
         </table>
         <!--  --> 
