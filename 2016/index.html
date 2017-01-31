@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Data collected over the year of 2016">
+    <meta name="author" content="Steven Smethurst">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAD22aUA99mlAPbWnQD33rAA/ffuAPrpywD89OYA++nLAPfbqAD55sMA99igAP78+QD67tYA/fnxAP758QD99ukA/PPhAP/+/AD43rEA9tupAPnmxAD32KEA9dWZAP78+gD42KEA9tWZAPjgtAD9+fIA+eC0AP758gD33awA+ejHAProxwD+/v0A+eW/APjitwD++/UA99uqAPrmxQD22KIA/fnzAPngtQD99usA+N2tAP7+/gD78NsA//7+AP779gD9+O4A9tijAPXVmwD44LYA+eC2APfdrgD22qYA+ujJAPnlwQD2154A+OK5APrt1AD++/cA99+xAPrqzAD++O8A99mhAP79+gD33a8A99qnAPbXnwD88N0A99efAP77+AD437IA/fjwAPfUlwD43KoA/v37APrkvQD//fsA/frzAP768wD///4A99qoAPbXoAD11JgA+N+zAPrqzgD33KsA+efGAPjcqwD32aMA9+G2APzv2QD54bYA++zRAP337AD///8A/vz3APjcrAD22aQA99mkAPzy4gD++vUA+eG3APferwD205QA+N6vAPz05QD99OUA+/HdAPbYnwD+/PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYGBgYGBgYDAfSBxeZmBgYGBgIWBgLk1qaD0jWwM+YGBgQWtgUWdiNBtgYGBgbVhgYEJgYEUlWGBMHWBgYGALUB0SYGBVEmBgYChVTGBgYGAiSGBOASoENgA4DlIvYGBgXVlgQWNhZGQBASYUE2BgYDpEYBE1XBUVJydXT2RlYGBlAiBgCWxEU1NTK2BjM2BgYDIyBklMQwICORBgYzFgYGA/GRlWLGAtNzxfLgJSYGBgYA9UVBYeGmgIFzsyVmBgYGBgYAxARksNYGAKGUdgYGBgYGBgYGBgYGApSgVgYGBgYGBgYGBgYBsYaQdgYGBgYGBgYGBvIFpuIiRgYGBgYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    <title>2016 Personal dashboard</title>
+
+	<!-- Latest Bootstrap -->
+	<link rel="stylesheet" href="3rdparty/bootstrap.min.css">
+	<link rel="stylesheet" href="3rdparty/bootstrap-theme.min.css">
+
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="3rdparty/jquery-2.1.4.min.js"></script>
+	<script src="3rdparty/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>    
+      <div class="container">
+        <div class="navbar navbar-default" role="navigation">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">2016</a></li>
+            <li><a href="../2015/">2016</a></li>
+            <li><a href="../2014/">2014</a></li>
+          </ul>
+        </div>
+      </div>
+    
+
+    <div class="container">
+
+        <h2 id='about'>About</h2>
+        <p>Step count, Data from receue time, banking, hydro, bills. Previouse year <a href='http://data.abluestar.com/2015/'>2015</a></p>
+        <p>Inspired by <a href='http://blog.stephenwolfram.com/2012/03/the-personal-analytics-of-my-life/'>The Personal Analytics of My Life by Stephen Wolfram</a></p>
+
+        <h3>Tools used:</h3>
+        <ul>
+        	<li><h4>Data Tracking</h4>
+        		<ul>
+        			<li><a href='https://dev.twitter.com/docs/api/1.1'>Twitter API</a> - Social site. </li>
+		            <li><a href='https://analytics.twitter.com/user/funvill/tweets'>Twitter Analytics</a> - Stats about my tweets</li>                
+		            <li><a href='https://developer.foursquare.com/'>Foursquare API</a> - Tracks the places I check into </li>
+		            <li><a href='https://foursquare.com/infographics/4sqday'>Foursquare Year in review</a> - Info graphics about your foursquare data. </li>
+		            <li><a href='http://www.last.fm/api'>LastFM API</a> - Tracks the songs that are played from my variouse devices and apps.</li>
+		            <li><a href="https://developer.github.com/">Github API</a> - Storage for the source code. Tracking commits</li>
+		            <li><a href="https://github.com/users/funvill/contributions">Github contributions</a> - The Github checkin values were extracted from the contributions page. I used macros to extract the data from the SVG image</p>
+		            <li><a href='https://moves-app.com/'>Moves-App</a> - An Android and ISO app that tracks your movements and steps.</li>
+		            <li><a href='https://move-o-scope.halftone.co'>Move-o-scope</a> - Maping for Moves-App</li>
+		            <li><a href='https://history.google.com/history/'>Google search history</a> - A list of all the searches I have made this year</li>
+		            <li><a href='https://www.rescuetime.com/ref/533973'>RescueTime</a> - Windows apps tracker.</li>
+        		</ul>
+        	</li>
+            <li><h4>Webpage and visualization</h4>
+            	<ul>
+            		<li><a href="https://getbootstrap.com/">Bootstrap</a> - A frontend framework for making websites fast.</li>
+                    <li><a href='https://jquery.com/'>jQuery</a> - Required by bootstrap.  </li>
+            	</ul>
+            </li>
+        </ul>
+
+        <h3 id='Totals'>Totals</h3>
+        <p>Totals from stats</p>
+        <style>
+        #totals td { text-align: right; }
+        </style>
+        <table id='totals'>
+            <tr><th>Tweets</th><td>524</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 211</i>)</td></tr>
+            <tr><th>twitter_impressions</th><td>108,088</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #3F3;'> 5,088</i>)</td></tr>
+            <tr><th>twitter_engagements</th><td>2,926</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 788</i>)</td></tr>
+            <tr><th>twitter_retweets</th><td>110</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 5</i>)</td></tr>
+            <tr><th>twitter_replies</th><td>115</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 29</i>)</td></tr>
+            <tr><th>twitter_likes</th><td>295</td><td> (<i class="fa fa-arrow-down" aria-hidden="true" style='color: #f00;'> 36</i>)</td></tr>
+            <tr><th>twitter_userProfileClicks</th><td>179</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 44</i>)</td></tr>
+            <tr><th>twitter_UrlClicks</th><td>418</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 5</i>)</td></tr>
+            <tr><th>lastfm_songsPlayed</th><td>4,990</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 2,517</i>)</td></tr>
+            <tr><th>github_checkins</th><td>351</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #f00;'> 10</i>)</td></tr>
+            <tr><th>foursquare_checkins</th><td>849</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 85</i>)</td></tr>
+            <tr><th>bchydro_netConsumption</th><td> ToDo: ????? 2,757.45 kWh</td></tr>
+            <tr><th>Visa</th><td>{redacted}</td></tr>
+            <tr><th>Google Searches</th><td> ToDo: ????? 10,236</td></tr>
+            <tr><th>Steps</th><td>2,630,919</td><td> (<i class="fa fa-arrow-up" aria-hidden="true" style='color: #0F0;'> 474,791</i>)</td></tr>
+            <tr><th>Netflix</th><td>320</td><td>New</td></tr>
+            
+        </table>
+        <!--  --> 
+
+        ToDo: Stats per day chart. 
+
+        <!-- Maps --> 
+        <h3 id='maps'>Maps</h3>
+        <p>This map is generated with the data recored from <a href='https://moves-app.com/'>Moves-App</a> and mapped with <a href='https://move-o-scope.halftone.co'>Move-o-scope</a>. <a href='https://app.moveoscope.com/vis/user/795acfdbaafef581c28bd81e3126d29e'>Interactive map</a></p>
+        <!--  --> 
+
+        <ul class="nav nav-pills">
+          <li role="presentation"><a class="mapAll"   href="#maps">All</a></li>
+          <li role="presentation"><a class="mapWalk"  href="#maps">Walk</a></li>
+          <li role="presentation"><a class="mapRun"   href="#maps">Run</a></li>
+          <li role="presentation"><a class="mapCycle" href="#maps">Cycle</a></li>
+          <li role="presentation"><a class="mapTrans" href="#maps">Trans</a></li>
+        </ul>
+        <img id='mapImage' src='data/moves/all.png' style="width: 100%;" />
+
+        <script type="text/javascript" >
+            $(function() {
+             $('.mapAll').click(function() { 
+               $("#mapImage").attr('src',"data/moves/all.png");   $("#mapImage").fadeIn(); return false;
+             });
+             $('.mapWalk').click(function(){
+               $("#mapImage").attr('src',"data/moves/walk.png");  $("#mapImage").fadeIn(); return false;
+             });
+             $('.mapRun').click(function(){
+               $("#mapImage").attr('src',"data/moves/run.png");   $("#mapImage").fadeIn(); return false;
+             });
+             $('.mapCycle').click(function(){
+               $("#mapImage").attr('src',"data/moves/cycle.png"); $("#mapImage").fadeIn(); return false;
+             });
+             $('.mapTrans').click(function(){
+               $("#mapImage").attr('src',"data/moves/trans.png"); $("#mapImage").fadeIn(); return false;
+             });
+            });
+        </script>
+        <!-- / #Maps -->  
+
+        
+        <h3 id='foursquare'>Four Square</h3>
+        <p>This graphics is produced from <a href="https://foursquare.com/infographics/4sqday">FourSquare's year in review</a> page</p>
+        <img src='data/foursquare/activies.png' style="width: 100%;" />
+        <br />
+       
+        
+        <h3>Time spent</h3>
+        <p>These reports are created with <a href='https://www.rescuetime.com/ref/533973'>RescueTime</a>. The data comes from an app that is installed on my work and home PCs as well as my primary cell phone. The app only recoreds when the mouse and keyboard are active while using this app. This can distort the reportins for certain apps. </p>
+        <p>For example: <br />In Visual Studio I spent most of my time typing and that time gets reported correctly. While watching a movie in Netflix, I don't move my mouse or type on my keyboard and their app dones not correctly report the time spent in these apps.</p>
+        <img src='data/rescuetime/top.png' style="width: 100%;" /><br />
+        <img src='data/rescuetime/timeofyear.png' style="width: 100%;" /><br />
+
+
+
+        
+        <br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">                    
+                    <table style='width: 100%'>
+                        <tr><th>Rank</th><th>Activity</th><th>Overview</th></tr>
+                        <tr><td>1</td><td>Gmail</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>2</td><td><a href='https://netflix.com'>netflix.com</a></td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>3</td><td><a href='https://facebook.com'>facebook.com</a></td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>4</td><td><a href='https://youtube.com'>youtube.com</a></td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>5</td><td><a href='https://code.visualstudio.com/'>Visual Studio code</a></td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>6</td><td>Visual Studio</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>7</td><td><a href='http://www.autodesk.com/products/fusion-360/overview'>fusion360</a></td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>8</td><td><a href='https://www.wireshark.org/'>wireshark</a></td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>9</td><td>javaw</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>10</td><td>slack</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>11</td><td>nckgahadagoaajjgafhacjanaoiihapd</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>12</td><td>Google Documents</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>13</td><td>{redacted}</td><td><div class=''>{redacted}</div></td></tr>
+                        <tr><td>14</td><td><a href='https://google.ca'>google.ca</a></td><td><div class='reference'>Reference & Learning</div></td></tr>
+                        <tr><td>15</td><td><a href='https://twitter.com'>twitter.com</a></td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>16</td><td><a href='https://reddit.com'>reddit.com</a></td><td><div class='news'>News & Opinion</div></td></tr>
+                        <tr><td>17</td><td>{redacted}</td><td><div>{redacted}</div></td></tr>
+                        <tr><td>18</td><td><a href='https://aliexpress.com'>aliexpress.com</a></td><td><div class='shopping'>Shopping</div></td></tr>
+                        <tr><td>19</td><td>Skype</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>20</td><td><a href='https://play.google.com'>play.google.com</a></td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>21</td><td>Google Chrome</td><td><div class='utilities'>Utilities</div></td></tr>
+                        <tr><td>22</td><td><a href='https://hackaday.com'>hackaday.com</a></td><td><div class='news'>News & Opinion</div></td></tr>
+                        <tr><td>23</td><td>inkscape</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>24</td><td>sublime_text</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>25</td><td><a href='https://github.com'>github.com</a></td><td><div class='devlopment'>Software Development</div></td></tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table style='width: 100%'>
+                        <tr><th>Rank</th><th>Activity</th><th>Overview</th></tr>
+                        <tr><td>26</td><td>{redacted}</td><td><div>{redacted}</div></td></tr>
+                        <tr><td>27</td><td>desktopdungeons</td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>28</td><td>5piceide</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>29</td><td>twitter.com</td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>30</td><td>Adobe Reader</td><td><div class='reference'>Reference & Learning</div></td></tr>
+                        <tr><td>31</td><td>stackoverflow.com</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>32</td><td>{redacted}</td><td><div>{redacted}</div></td></tr>
+                        <tr><td>33</td><td>airbnb.ca</td><td><div class='reference'>Reference & Learning</div></td></tr>
+                        <tr><td>34</td><td>teamviewer</td><td><div class='utilities'>Utilities</div></td></tr>
+                        <tr><td>35</td><td>minimetro</td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>36</td><td>gitkraken</td><td><div class='devlopment'>Software Development</div></td></tr>
+                        <tr><td>37</td><td>photos.google.com</td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>38</td><td>crimsonland</td><td><div class='entertainment'>Entertainment</div></td></tr>
+                        <tr><td>39</td><td>cura</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>40</td><td>kickstarter.com</td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>41</td><td>instagram.com</td><td><div class='social'>Social Networking</div></td></tr>
+                        <tr><td>42</td><td>shellexperiencehost</td><td><div class='utilities'>Utilities</div></td></tr>
+                        <tr><td>43</td><td>google.com</td><td><div class='reference'>Reference & Learning</div></td></tr>
+                        <tr><td>44</td><td>google.com/calendar</td><td><div class='comunication'>Communication & Scheduling</div></td></tr>
+                        <tr><td>45</td><td>dxp</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>46</td><td>Google Spreadsheets</td><td><div class='business'>Business</div></td></tr>
+                        <tr><td>47</td><td>skitch</td><td><div class='design'>Design & Composition</div></td></tr>
+                        <tr><td>48</td><td>instructables.com</td><td><div class='reference'>Reference & Learning</div></td></tr>
+                        <tr><td>49</td><td>hackaday.io</td><td><div class='news'>News & Opinion</div></td></tr>
+                        <tr><td>50</td><td>Amazon AWS Console</td><td><div class='devlopment'>Software Development</div></td></tr>
+
+                    </table>                    
+                </div>
+            </div>
+        </div>
+        <br /><br /><br />
+        <style>
+            .entertainment, .news, .social, .shopping {
+                color: red ;
+            }
+            .devlopment, .design, .utilities, .comunication {
+                color: blue ;
+            }
+            .reference {
+                color: green ;
+            }
+        </style>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
